@@ -2,14 +2,108 @@
     Author: Frank J. Quinones
     Site: http://frankdraws.github.io
 */
-html, body {
-    margin: 0;
-    padding: 0;
+
+@import url(https://fonts.googleapis.com/css?family=Open + Sans:600);
+body {
+    font-family: "Open Sans", sans-serif;
+    font-weight: 600;
+    /*   font-size: 40px; */
+    font-size: calc(40px + (26 - 14) * ((100vw - 300px) / (1600 - 300)));
+}
+
+#container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    /*   flex-wrap: wrap; */
     width: 100vw;
     height: 100vh;
 }
 
-body {
-    font: normal 16px/1.3 "Helvetica", sans-serif;
-    color: #333;
+.text {
+    /*   position: absolute; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    /*   left: 50%; */
+    /*   margin-left: -225px; */
+    /*   height: 40px; */
+    /*   top: 50%; */
+    /*   margin-top: -20px; */
+    /*   outline: 1px solid red; */
+}
+
+#intro {
+    text-align: center;
+}
+
+p {
+    /*   display: inline-block; */
+    vertical-align: top;
+    margin: 0;
+}
+
+.word {
+    position: absolute;
+    /*   width: 220px; */
+    opacity: 0;
+}
+
+#animate {
+    /*   outline: 1px solid gray; */
+    min-width: 210px;
+    height: 46px;
+}
+
+@media only screen and (max-width: 612px) {
+    #animate {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+    }
+}
+
+.letter {
+    display: inline-block;
+    position: relative;
+    float: left;
+    transform: translateZ(25px);
+    transform-origin: 50% 50% 25px;
+}
+
+.letter.out {
+    transform: rotateX(90deg);
+    transition: transform 0.32s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+
+.letter.behind {
+    transform: rotateX(-90deg);
+}
+
+.letter.in {
+    transform: rotateX(0deg);
+    transition: transform 0.38s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.wisteria {
+    color: #ff3aa5;
+}
+
+.belize {
+    color: #00ec83;
+}
+
+.pomegranate {
+    color: #9542bf;
+}
+
+.green {
+    color: #50e6d6;
+}
+
+.midnight {
+    color: #0368d9;
 }
